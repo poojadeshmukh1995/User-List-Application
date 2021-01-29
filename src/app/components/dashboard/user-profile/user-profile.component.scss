@@ -1,0 +1,17 @@
+.container {
+   height: 100vh;
+   width: 100vh;
+   background-color: gray;
+   &__user-data {
+      display: grid;
+      justify-content: center;
+      padding-top: 15%;
+      label{
+         color: lightgrey;
+         font-size: 1.5rem;
+      }
+   }
+   &__key {
+      padding-top: 20px;
+   }
+}

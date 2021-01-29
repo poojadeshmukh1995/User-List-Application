@@ -1,0 +1,28 @@
+<div class = "container table-responsive">
+      <h2>User List</h2>
+   <table class="table table-bordered">
+      <thead>
+         <tr>
+            <th *ngFor="let heading of tableHeading" scope="col">
+               {{heading}}
+            </th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let item of userList">
+            <td class = "table-value">
+               {{item.id}}
+            </td>
+            <td class = "table-value">
+               {{item.email}}
+            </td>
+            <td class = "table-value">
+               {{item.first_name}}
+            </td>
+            <td class = "table-value">
+               {{item.last_name}}
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>
