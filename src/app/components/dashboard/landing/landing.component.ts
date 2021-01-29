@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Labels } from '../../../shared/labels';
 
 @Component({
   selector: 'app-landing',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-
+   labels = Labels.navbarLabels;
   constructor() { }
 
   ngOnInit() {

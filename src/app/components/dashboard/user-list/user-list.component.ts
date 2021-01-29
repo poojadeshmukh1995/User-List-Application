@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../user-data.service';
 import { IUserList } from '../../../shared/model';
+import { Labels } from '../../../shared/labels';
 
 @Component({
    selector: 'app-user-list',
@@ -10,7 +11,8 @@ import { IUserList } from '../../../shared/model';
 export class UserListComponent implements OnInit {
 
    userList: IUserList[];
-   tableHeading = ['Id', 'Email', 'First name', 'Last name'];
+   tableHeading = Labels.userListLabels.tableHeading;
+   labels = Labels.userListLabels;
 
    constructor(private readonly userDataService: UserDataService) { }
 

@@ -8,21 +8,23 @@
    </div>
 </div>
 </div> -->
+<form autocomplete="off">
 <div class="main-container">
    <div class="container">
       <div class="container__content">
-      <h1>User Login</h1>
+      <h1>{{labels.userLoginHeading}}</h1>
       <div>
-         <h4> User id</h4>
-         <input type="text" class="form-control input-lg">
+         <h4>{{labels.userId}}</h4>
+         <input autocomplete="off" type="text" placeholder="Id" class="form-control input-lg" required>
       </div>
       <div>
-         <h4>Password</h4>
-         <input type="password" class="form-control input-lg">
+         <h4>{{labels.password}}</h4>
+         <input type="password" autocomplete="off" placeholder="Password" class="form-control input-lg" required>
       </div>
       <div>
-         <button type="button" class="btn btn-lg btn-block" (click)="onLoggedIn()">Let me in</button>
+         <button type="button" class="btn btn-lg btn-block" (click)="onLoggedIn()">{{labels.buttonLabel}}</button>
       </div>
    </div>
    </div>
 </div>
+</form>

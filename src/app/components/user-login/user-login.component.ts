@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Labels } from '../../shared/labels';
 
 @Component({
   selector: 'app-user-login',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class UserLoginComponent implements OnInit {
 
+   labels = Labels.userLoginLabels;
   constructor(private readonly router: Router) { }
 
   ngOnInit() {
