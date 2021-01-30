@@ -4,7 +4,7 @@ export class Labels {
       userId: 'User id',
       password: 'Password',
       buttonLabel: 'Let me in',
-      idValidationMsg: 'Please enter valid id()1-10',
+      idValidationMsg: 'Please enter valid id(1-10)',
       passwordValidationMsg: 'Please enter valid password'
    };
    public static userListLabels = {
