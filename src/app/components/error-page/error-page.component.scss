@@ -1,15 +1,12 @@
 .main-container {
-  // justify-content: center;
    background-color: gray;
    height: 100vh;
+   &__sub-container {
+      display: grid;
+      justify-content: center;
+   }
 }
-
 .warning-icon {
-   font-size: 500px;
-   display: grid;
-   justify-content: center;
-}
-
-h1 {
-   margin-left: 300px;
+   margin-top: 10%;
+   font-size: 350px;
 }

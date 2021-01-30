@@ -1,21 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+   providedIn: 'root'
 })
 export class UserDataService {
+   userId: number;
 
-  constructor(private http: HttpClient) { }
+   constructor(private http: HttpClient) { }
+   set UserId(id: number) {
+      this.userId = id;
+   }
 
-  getUserList(): Observable<any> {
-   return this.http.get('https://reqres.in/api/users?page=2');
-  }
+   get UserId(): number {
+      return this.userId;
+   }
+   getUserList(id: number): Observable<any> {
+      return this.http.get('https://reqres.in/api/users?page=' + id);
+   }
 
-  getUserProfile(): Observable<any> {
-   return this.http.get('https://reqres.in/api/users/2');
-  }
+   getUserProfile(id: number): Observable<any> {
+      return this.http.get('https://reqres.in/api/users/' + id);
+   }
 
 }

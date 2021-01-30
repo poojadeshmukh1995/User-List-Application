@@ -1,12 +1,15 @@
 <div class="container">
-   <div class="container__user-data">
-      <h2 class= "container__key">Id</h2>
-      <label>{{userProfile.id}}</label>
-      <h2 class= "container__key">Email</h2>
-      <label>{{userProfile.email}}</label>
-      <h2 class= "container__key">First name</h2>
-      <label>{{userProfile.first_name}}</label>
-      <h2 class= "container__key">Last name</h2>
-      <label>{{userProfile.last_name}}</label>
+   <div class="container__user-profile">
+      <div>
+         <img src={{userProfile.avatar}} width="250" height="290">
+      </div>
+      <div class="container__user-info">
+         <h3>{{labels.name}}</h3>
+         <label>{{userProfile.first_name + ' ' + userProfile.last_name}}</label>
+         <h3>{{labels.email}}</h3>
+         <label>{{userProfile.email}}</label>
+         <h3>{{labels.id}}</h3>
+         <label>{{userProfile.id}}</label>
+      </div>
    </div>
 </div>

@@ -3,15 +3,19 @@ export class Labels {
       userLoginHeading: 'User Login',
       userId: 'User id',
       password: 'Password',
-      buttonLabel: 'Let me in'
+      buttonLabel: 'Let me in',
+      idValidationMsg: 'Please enter valid id()1-10',
+      passwordValidationMsg: 'Please enter valid password'
    };
    public static userListLabels = {
-      tableHeading : ['Id', 'Email', 'First name', 'Last name'],
+      tableHeading: ['Id', 'Email', 'First name', 'Last name'],
       userListHeading: 'User List'
 
    };
    public static userProfileLabels = {
-
+      name: 'Name',
+      id: 'Id',
+      email: 'Email'
    };
 
    public static navbarLabels = {
@@ -20,5 +24,9 @@ export class Labels {
       setting: 'Setting',
       logOut: 'Log Out'
 
+   };
+   public static commonLabels = {
+      errorMsg: 'Page not found!!!',
+      warningMsg: 'This page is under construction!!!'
    };
 }

@@ -14,6 +14,5 @@ import { SettingComponent } from './setting/setting.component';
     DashboardRoutingModule
   ],
   exports: [LandingComponent],
-  providers: [UserDataService]
 })
 export class DashboardModule { }

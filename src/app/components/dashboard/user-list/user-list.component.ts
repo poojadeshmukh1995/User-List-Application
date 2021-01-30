@@ -18,9 +18,13 @@ export class UserListComponent implements OnInit {
 
    ngOnInit() {
       this.userList = [];
-      this.userDataService.getUserList().subscribe((response) => {
-         this.userList = response.data;
-         console.log(this.userList);
+      // api call to fetch user list
+      this.userDataService.getUserList(this.userDataService.userId).subscribe((response) => {
+         if (response.data) {
+            this.userList = response.data;
+         } else {
+            alert('something went wrong');
+         }
       });
    }
 

@@ -1,30 +1,23 @@
-<!-- <div class = "main">
-<div class="container d-flex justify-content-center flex-column">
-   <div class="main-content">
-     <div class = "main-content__heading"> Login </div>
-      <input type="text">
-      <input type="password">
-      <button type="button" class="btn btn-primary" (click) = "onLoggedIn()">Let me in</button>
-   </div>
-</div>
-</div> -->
-<form autocomplete="off">
 <div class="main-container">
    <div class="container">
-      <div class="container__content">
-      <h1>{{labels.userLoginHeading}}</h1>
-      <div>
-         <h4>{{labels.userId}}</h4>
-         <input autocomplete="off" type="text" placeholder="Id" class="form-control input-lg" required>
-      </div>
-      <div>
-         <h4>{{labels.password}}</h4>
-         <input type="password" autocomplete="off" placeholder="Password" class="form-control input-lg" required>
-      </div>
-      <div>
-         <button type="button" class="btn btn-lg btn-block" (click)="onLoggedIn()">{{labels.buttonLabel}}</button>
-      </div>
-   </div>
+      <form #signInForm="ngForm" (ngSubmit)="onLoggedIn(signInForm)">
+         <div class="container__content">
+            <h1>{{labels.userLoginHeading}}</h1>
+            <div>
+               <h4>{{labels.userId}}</h4>
+               <input autocomplete="off" type="text" placeholder="Id" class="form-control input-lg" name="id" ngModel #id='ngModel' required>
+               <small *ngIf="id.touched && !id.valid">{{labels.idValidationMsg}}</small>
+            </div>
+            <div>
+               <h4>{{labels.password}}</h4>
+               <input type="password" autocomplete="off" placeholder="Password" class="form-control input-lg" name="password" #password='ngModel'
+                  ngModel required>
+               <small *ngIf="password.touched && !password.valid">{{labels.passwordValidationMsg}}</small>
+            </div>
+            <div>
+               <button type="submit" class="btn btn-lg btn-block" [disabled]="!signInForm.valid">{{labels.buttonLabel}}</button>
+            </div>
+         </div>
+      </form>
    </div>
 </div>
-</form>

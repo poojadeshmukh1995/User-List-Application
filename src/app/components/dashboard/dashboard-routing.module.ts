@@ -7,21 +7,22 @@ import { SettingComponent } from './setting/setting.component';
 
 const routes: Routes = [
    {
-      path: '', redirectTo: 'landing', pathMatch: 'full'},
-      {
-         path: 'landing', component: LandingComponent,
-         children: [
-            {path: '', redirectTo: 'user-list', pathMatch: 'full'},
-            {
-               path: 'user-list', component: UserListComponent
-            },
-            {
-               path: 'user-profile', component: UserProfileComponent
-            },
-            {
-               path: 'setting', component: SettingComponent
-            }
-         ]
+      path: '', redirectTo: 'landing', pathMatch: 'full'
+   },
+   {
+      path: 'landing', component: LandingComponent,
+      children: [
+         { path: '', redirectTo: 'user-list', pathMatch: 'full' },
+         {
+            path: 'user-list', component: UserListComponent
+         },
+         {
+            path: 'user-profile', component: UserProfileComponent
+         },
+         {
+            path: 'setting', component: SettingComponent
+         }
+      ]
    }
 ];
 @NgModule({

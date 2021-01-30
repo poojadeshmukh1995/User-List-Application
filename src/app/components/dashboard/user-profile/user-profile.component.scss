@@ -1,17 +1,33 @@
 .container {
    height: 100vh;
-   width: 100vh;
    background-color: gray;
-   &__user-data {
-      display: grid;
-      justify-content: center;
-      padding-top: 15%;
-      label{
+   position: relative;
+
+   &__user-profile {
+      position: absolute;
+      width: 700px;
+      border: 5px solid honeydew;
+      height: 300px;
+      background-color: dimgray;
+      display: flex;
+      flex-direction: row;
+      margin-top: 20%;
+      margin-left: 80px;
+   }
+
+   &__user-info {
+      padding: 10px;
+      label {
          color: lightgrey;
-         font-size: 1.5rem;
+         font-size: 2rem;
+         font-weight: bold;
+         margin-bottom: 20px;
       }
+
+      h3 {
+         margin-bottom: 0px;
+      }
+
    }
-   &__key {
-      padding-top: 20px;
-   }
+
 }
