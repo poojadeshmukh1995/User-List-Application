@@ -1,0 +1,27 @@
+<div class = 'table-responsive'>
+<table class="table table-bordered">
+   <thead>
+      <tr>
+         <th *ngFor="let heading of tableHeadings" scope="col">
+            {{heading}}
+         </th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr *ngFor="let item of tableData">
+         <td class="table-value">
+            {{item.id}}
+         </td>
+         <td class="table-value">
+            {{item.email}}
+         </td>
+         <td class="table-value">
+            {{item.first_name}}
+         </td>
+         <td class="table-value">
+            {{item.last_name}}
+         </td>
+      </tr>
+   </tbody>
+</table>
+</div>

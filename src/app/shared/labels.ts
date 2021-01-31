@@ -17,16 +17,27 @@ export class Labels {
       id: 'Id',
       email: 'Email'
    };
-
    public static navbarLabels = {
-      userList: 'User List',
-      profile: 'Profile',
-      setting: 'Setting',
-      logOut: 'Log Out'
-
+      navBarLabelsArray: [{
+         label: 'User List',
+         link: 'user-list'
+      },
+      {
+         label: 'Profile',
+         link: 'user-profile'
+      },
+      {
+         label: 'Setting',
+         link: 'setting'
+      },
+      {
+         label: 'Log Out',
+         link: ''
+      }]
    };
    public static commonLabels = {
       errorMsg: 'Page not found!!!',
+      apiErrorMsg: 'Something went wrong',
       warningMsg: 'This page is under construction!!!'
    };
 }

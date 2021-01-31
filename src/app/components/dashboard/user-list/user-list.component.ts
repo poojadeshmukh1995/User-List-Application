@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../user-data.service';
 import { IUserList } from '../../../shared/model';
 import { Labels } from '../../../shared/labels';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
    selector: 'app-user-list',
@@ -12,7 +13,10 @@ export class UserListComponent implements OnInit {
 
    userList: IUserList[];
    tableHeading = Labels.userListLabels.tableHeading;
+   errorMsg = Labels.commonLabels.apiErrorMsg;
    labels = Labels.userListLabels;
+   isApiFailed: boolean;
+   isLoader = true;
 
    constructor(private readonly userDataService: UserDataService) { }
 
@@ -20,11 +24,16 @@ export class UserListComponent implements OnInit {
       this.userList = [];
       // api call to fetch user list
       this.userDataService.getUserList(this.userDataService.userId).subscribe((response) => {
-         if (response.data) {
+         if (response.data && response.data.length > 0) {
             this.userList = response.data;
+            this.isLoader = false;
          } else {
-            alert('something went wrong');
+            this.isLoader = false;
+            this.isApiFailed = true;
          }
+      }, (error: HttpErrorResponse) => {
+         this.isLoader = false;
+         this.isApiFailed = true;
       });
    }
 

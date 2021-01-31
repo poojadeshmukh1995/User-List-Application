@@ -1,15 +1,27 @@
 <div class="container">
-   <div class="container__user-profile">
-      <div>
-         <img src={{userProfile.avatar}} width="250" height="290">
+   <ng-container *ngIf="!isApiFailed; else showErrorTemplate">
+      <div class="container__user-profile">
+         <ng-container *ngIf="!isShowLoader; else showLoaderTemplate">
+            <div>
+               <img src={{userProfile.avatar}} width="250" height="290">
+            </div>
+            <div class="container__user-info">
+               <h3>{{labels.name}}</h3>
+               <label>{{userProfile.first_name + ' ' + userProfile.last_name}}</label>
+               <h3>{{labels.email}}</h3>
+               <label>{{userProfile.email}}</label>
+               <h3>{{labels.id}}</h3>
+               <label>{{userProfile.id}}</label>
+            </div>
+         </ng-container>
+         <ng-template #showLoaderTemplate>
+            <div class="loader">
+               <app-loader></app-loader>
+            </div>
+         </ng-template>
       </div>
-      <div class="container__user-info">
-         <h3>{{labels.name}}</h3>
-         <label>{{userProfile.first_name + ' ' + userProfile.last_name}}</label>
-         <h3>{{labels.email}}</h3>
-         <label>{{userProfile.email}}</label>
-         <h3>{{labels.id}}</h3>
-         <label>{{userProfile.id}}</label>
-      </div>
-   </div>
+   </ng-container>
+   <ng-template #showErrorTemplate>
+      <app-load-error [errorMsg]="errorMsg"></app-load-error>
+   </ng-template>
 </div>

@@ -10,11 +10,11 @@ const routes: Routes = [
       path: '', redirectTo: 'login', pathMatch: 'full'
    },
    {
-      path: 'dashboard',
-      loadChildren: () => import('./components/dashboard/dashboard.module').then(m => m.DashboardModule)
+      path: 'login', component: UserLoginComponent
    },
    {
-      path: 'login', component: UserLoginComponent
+      path: 'dashboard',
+      loadChildren: () => import('./components/dashboard/dashboard.module').then(m => m.DashboardModule)
    },
    {
       path: '**', component: ErrorPageComponent // wild card route
