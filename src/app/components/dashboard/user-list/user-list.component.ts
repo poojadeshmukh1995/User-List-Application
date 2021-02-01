@@ -13,7 +13,7 @@ export class UserListComponent implements OnInit {
 
    userList: IUserList[];
    tableHeading = Labels.userListLabels.tableHeading;
-   errorMsg = Labels.commonLabels.apiErrorMsg;
+   errorMsg = Labels.commonLabels;
    labels = Labels.userListLabels;
    isApiFailed: boolean;
    isLoader = true;
@@ -28,7 +28,6 @@ export class UserListComponent implements OnInit {
             this.userList = response.data;
             this.isLoader = false;
          } else {
-            this.isLoader = false;
             this.isApiFailed = true;
          }
       }, (error: HttpErrorResponse) => {

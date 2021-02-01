@@ -10,7 +10,7 @@
    </ng-container>
    <ng-template #showErrorTemplate>
       <div class="errorMsg">
-         <app-load-error [errorMsg]="isLoader ? errorMsg: 'No record found'"></app-load-error>
+         <app-load-error [errorMsg]="isLoader ? errorMsg.noRecordsMsg : errorMsg.apiErrorMsg"></app-load-error>
       </div>
    </ng-template>
 </div>

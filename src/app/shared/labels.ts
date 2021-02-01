@@ -38,6 +38,7 @@ export class Labels {
    public static commonLabels = {
       errorMsg: 'Page not found!!!',
       apiErrorMsg: 'Something went wrong',
+      noRecordsMsg: 'No records found',
       warningMsg: 'This page is under construction!!!'
    };
 }
